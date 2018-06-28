@@ -40,7 +40,7 @@ export default class FullPlay extends React.Component {
         if (this.props.paused !== prevProps.paused) {
             !this.props.paused ? this.lyricPlay(this.props.currentTime) : this.lyricStop()
         }
-        
+
         // 歌词行数已改变或者是播放器由hide变成show
         if (this.state.currentLine !== prevState.currentLine || (this.props.showFullPlay === true && prevProps.showFullPlay === false)) {
             this.setLyricScroll(this.state.currentLine)
@@ -103,7 +103,7 @@ export default class FullPlay extends React.Component {
         this.props.percentageChangeFunc(percentage)
 
         let currentTime = this.props.duration * percentage
-        
+
         // 点击或拖动滚动条时，currentTime 如果小于第一条歌词的播放时间
         // lyric实例因为没有匹配的歌词，导致currentLine停留在上一次
         if (this.lyric && this.state.lines.length && currentTime < this.state.lines[0].time) {
@@ -147,7 +147,7 @@ export default class FullPlay extends React.Component {
     render() {
         let { showLyric, lines, currentLine } = this.state
         let { music, paused, showFullPlay, togglePlay, prevMusic, nextMusic, showMusicList, percentage, currentTime, duration, goBackFunc, toggleMode, mode } = this.props
-    
+
         return (
             <div className={classNames({ 'full-play-wrapper': true, active: showFullPlay })} ref={wrapper => this.wrapper = wrapper}>
                 <div className="bg" style={{ backgroundImage: `url(${music.picUrl})`}}></div>

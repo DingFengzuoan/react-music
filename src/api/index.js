@@ -135,7 +135,7 @@ class Service {
                         }
                     }
                 }
-    
+
                 fragment artistFields on Artist {
                     id
                     name
@@ -143,7 +143,7 @@ class Service {
                     picUrl
                     transNames
                 }
-    
+
                 fragment albumFields on Album {
                     id
                     name
@@ -227,7 +227,7 @@ class Service {
                         ...radio
                     }
                 }
-                  
+
                 fragment radio on Radio {
                     id
                     name
@@ -300,7 +300,7 @@ class Service {
                         }
                     }
                 }
-                
+
                 fragment lyric on Lyric {
                     version
                     lyric

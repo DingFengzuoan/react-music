@@ -86,7 +86,7 @@ class Slidebar extends React.Component {
                         )
                     }
                 </Motion>
-                
+
                 <Motion style={{ opacity: spring(slidebarState ? 1 : 0) }}>
                     {
                         ({ opacity }) => (

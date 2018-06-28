@@ -20,7 +20,7 @@ class Radio extends React.Component {
 
     render() {
         let { radioRecommendType, radioRecommends } = this.props
-        
+
         return (
             <Scroll ref={scroll => this.scroll = scroll}>
                 <div>

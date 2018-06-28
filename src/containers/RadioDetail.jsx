@@ -62,7 +62,7 @@ class RadioDetail extends React.Component {
                     <i className="iconfont back" onClick={() => this.props.history.goBack()}>&#xe606;</i>
                     <div className="title">电台</div>
                     <i className="iconfont shape">&#xe648;</i>
-                    <i className="iconfont more">&#xe609;</i>  
+                    <i className="iconfont more">&#xe609;</i>
                 </div>
                 <div className="radio-detail-wrapper" style={{ bottom: showPlay ? '50px' : 0 }}>
                     {

@@ -23,7 +23,7 @@ class Play extends React.Component {
         this.readyPlay = this.readyPlay.bind(this)
         this.addMusic = this.addMusic.bind(this)
     }
-    
+
     componentDidMount() {
         this.initAudioEvent()
     }
@@ -80,7 +80,7 @@ class Play extends React.Component {
 
                 this.shouldPlay && this.togglePlay()
             }, 0)
-            
+
             document.removeEventListener('touchend', fn, true)
         }
         document.addEventListener('touchend', fn, true)
@@ -119,7 +119,7 @@ class Play extends React.Component {
             })
             return
         }
-        
+
         watcher.emit('showMessage', '播放出错,自动切换下一首')
         this.props.nextMusic()
     }
@@ -162,12 +162,12 @@ class Play extends React.Component {
         }
 
         let currentId = currentList[currentIndex].id
-        
+
         if (id === currentId) {
             this.state.paused && this.togglePlay()
         }
     }
-    
+
     togglePlay() {
         // 点击播放触发fixAutoPlay时，设置标记保证在fixAutoPlay之后再播放(pc hack)
         if (this.isFixAutoPlay) {
@@ -217,7 +217,7 @@ class Play extends React.Component {
 
         this.props.switchMusic(id)
     }
-    
+
     swipeHandle(e) {
         if (e.direction === 2) { // 左滑
             this.props.nextMusic()
@@ -259,7 +259,7 @@ class Play extends React.Component {
             showList: false,
             showMiniPlay: true
         })
-        
+
         this.props.removeAllMusic()
     }
 
@@ -278,23 +278,23 @@ class Play extends React.Component {
                 {
                     showPlay && (
                         <div>
-                            <MiniPlay 
-                                music={currentList[currentIndex]} 
-                                paused={paused} 
-                                percentage={currentTime / currentList[currentIndex].duration * 1000} 
+                            <MiniPlay
+                                music={currentList[currentIndex]}
+                                paused={paused}
+                                percentage={currentTime / currentList[currentIndex].duration * 1000}
                                 showMusicList={() => this.showMusicList()}
-                                togglePlay={() => this.togglePlay()} 
+                                togglePlay={() => this.togglePlay()}
                                 swipeHandle={(e) => this.swipeHandle(e)}
                                 contentClick={() => this.toggleMusicPlay()}
                             />
                             <FullPlay
-                                music={currentList[currentIndex]} 
-                                paused={paused} 
-                                percentage={currentTime / currentList[currentIndex].duration * 1000} 
+                                music={currentList[currentIndex]}
+                                paused={paused}
+                                percentage={currentTime / currentList[currentIndex].duration * 1000}
                                 showFullPlay={!showMiniPlay}
                                 mode={mode}
                                 showMusicList={() => this.showMusicList()}
-                                togglePlay={() => this.togglePlay()} 
+                                togglePlay={() => this.togglePlay()}
                                 prevMusic={() => prevMusic()}
                                 nextMusic={() => nextMusic()}
                                 currentTime={currentTime * 1000}
@@ -303,13 +303,13 @@ class Play extends React.Component {
                                 goBackFunc={() => this.toggleMusicPlay()}
                                 toggleMode={() => toggleMode()}
                             />
-                            <MusicList 
-                                list={originList} 
-                                show={showList} 
-                                activeId={currentList[currentIndex].id} 
+                            <MusicList
+                                list={originList}
+                                show={showList}
+                                activeId={currentList[currentIndex].id}
                                 mode={mode}
-                                switchMusic={(id) => this.switchMusic(id)} 
-                                hideMusicList={() => this.hideMusicList()} 
+                                switchMusic={(id) => this.switchMusic(id)}
+                                hideMusicList={() => this.hideMusicList()}
                                 removeMusic={(music) => this.removeMusic(music)}
                                 toggleMode={() => toggleMode()}
                                 clearAll={() => this.showPopup()}

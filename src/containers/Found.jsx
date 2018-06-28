@@ -18,13 +18,13 @@ class Found extends React.Component {
 
     onItemClick(index) {
         let id = this.props.personalized[index].id
-        
+
         this.props.history.push(`/playlistDetail/${id}`)
     }
 
     render() {
         let { banners, personalized } = this.props
-        
+
         return (
             <Scroll ref={scroll => this.scroll = scroll}>
                 <div>

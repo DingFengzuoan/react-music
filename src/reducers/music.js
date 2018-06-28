@@ -33,7 +33,7 @@ const initialState = {
 const music = createReducer(initialState, {
     [types.ADD_MUSIC](state, action) {
         let originList = [action.music].concat(musicDistinctList(state, action))
-        
+
         _music.originList = originList
         storage.set(MUSIC_KEY, _music)
 

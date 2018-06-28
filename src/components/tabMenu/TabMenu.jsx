@@ -19,7 +19,7 @@ export default class TabMenu extends React.Component {
                 {
                     tabs.map((tab, index) => (
                         <span key={index}
-                            className={classNames({ active: currentIndex === index, tab: true })} 
+                            className={classNames({ active: currentIndex === index, tab: true })}
                             style={{ flex: `0 0 ${100 / tabs.length}%`}}
                             onClick={() => this.tabSwitch(index)}
                         >

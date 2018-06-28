@@ -11,7 +11,7 @@ export default class ProgressBar extends React.Component {
             percentage: this.props.percentage || 0
         }
 
-        this.refresh = this.refresh.bind(this)      
+        this.refresh = this.refresh.bind(this)
     }
 
     componentDidMount() {
@@ -40,16 +40,16 @@ export default class ProgressBar extends React.Component {
 
     progressBarClick(e) {
         let pageX = e.pageX
-        
+
         let { left, width } = this.progressBar.getBoundingClientRect()
         let offsetX = pageX - left - pointW / 2
         let progressW = width - pointW
         let percentage = Math.max(0, Math.min(1, offsetX / progressW))
-        
+
         this.setState({
             percentage
         })
-        
+
         this.props.percentageChangeFunc(percentage)
     }
 
@@ -91,12 +91,12 @@ export default class ProgressBar extends React.Component {
         if (this.progressBar) {
             offsetX = (this.progressBar.getBoundingClientRect().width - pointW) * percentage
         }
-    
+
         return (
             <div className="progress-bar-wrapper" onClick={(e) => this.progressBarClick(e)} ref={progressBar => this.progressBar = progressBar}>
                 <div className="percentage" style={{ width: `${offsetX}px`}}></div>
-                <span 
-                    className="point" 
+                <span
+                    className="point"
                     style={{ transform: `translateX(${offsetX}px)`, WebkitTransform: `translate(${offsetX}px, -50%)` }}
                     onTouchStart={(e) => this.touchStart(e)}
                     onTouchMove={(e) => this.touchMove(e)}

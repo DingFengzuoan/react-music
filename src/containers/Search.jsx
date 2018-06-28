@@ -109,7 +109,7 @@ class Search extends React.Component {
         this.setState({
             keywords
         })
-        
+
         this._addSearchHistory(keywords)
 
         let path = `/search/${encodeURIComponent(keywords)}`
@@ -124,11 +124,11 @@ class Search extends React.Component {
 
     _addSearchHistory(keywords) {
         keywords = keywords.trim()
-        
+
         if (!keywords) {
             return
         }
-        
+
         this.props.addSearchHistory(keywords)
 
         if (this.state.isSearchResultPage) {
@@ -184,7 +184,7 @@ class Search extends React.Component {
                 watcher.emit('showMessage', '添加歌曲失败,找不到播放地址')
                 return
             }
-            
+
             let music = new Music({
                 name: song.name,
                 id: song.id,
@@ -207,7 +207,7 @@ class Search extends React.Component {
             list: [],
             count: 0
         }))
-        
+
         this.setState({
             tabs,
             currentIndex: 0

@@ -24,7 +24,7 @@ export default function ThumbnailList(props) {
                                 <div className="img" style={{ backgroundImage: `url(${item.picUrl})` }}></div>
                                 <span className="count">
                                     <i className="iconfont icon-erji">&#xe6c8;</i>
-                                    {numFormat(item.playCount)}    
+                                    {numFormat(item.playCount)}
                                 </span>
                                 <div className="name" style={{ WebkitBoxOrient: 'vertical' }}>{item.name}</div>
                             </div>

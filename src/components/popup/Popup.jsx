@@ -22,7 +22,7 @@ class Popup extends React.Component {
             show: false
         })
     }
-    
+
     confirmFunc() {
         this.hide()
         this.props.confirmFunc && this.props.confirmFunc()
@@ -36,7 +36,7 @@ class Popup extends React.Component {
     render() {
         let { show } = this.state
         let { title, message, cancelText, confirmText } = this.props
-        
+
         return (
             <div className={classNames({ 'popup-wrapper': true, active: show })}>
                 <div className={classNames({ popup: true, active: show })}>

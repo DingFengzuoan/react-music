@@ -48,7 +48,7 @@ class PlaylistDetail extends React.Component {
                 watcher.emit('showMessage', '添加歌曲失败,找不到播放地址')
                 return
             }
-            
+
             let music = new Music({
                 name: song.name,
                 id: song.id,
@@ -78,7 +78,7 @@ class PlaylistDetail extends React.Component {
                         <div className="info">根据你可能喜欢的风格推荐</div>
                     </div>
                     <i className="iconfont search">&#xe600;</i>
-                    <i className="iconfont more">&#xe609;</i>  
+                    <i className="iconfont more">&#xe609;</i>
                 </div>
                 <div className="play-list-detail-wrapper" style={{ bottom: showPlay ? '50px' : 0 }}>
                     {

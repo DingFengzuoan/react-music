@@ -58,7 +58,7 @@ export function dateFormat(fmt, date = new Date()) {
 
 /**
  * 找到并删除对应项
- * @param {array} list 
+ * @param {array} list
  * @param {function} fn 查找函数
  */
 export function distinctList(list, fn) {

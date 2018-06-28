@@ -35,7 +35,7 @@ export default class Swipe extends React.Component {
         this.setState({
             currentIndex: index
         })
-        
+
         this.props.callback(index, el)
     }
 
